@@ -1,24 +1,23 @@
-import React from 'react';
-import Post from '../components/Post';
+import React, { Suspense } from 'react';
+import { createResource } from 'simple-cache-provider';
+import ErrorBoundary from './ErrorBoundary';
+const Changelog = React.lazy(() => import('./Changelog'));
 
 import './styles/App.css';
 
-// this is fine for now...we need to be able to blog about making the blog...
-const CONTENT_LIST_011 = [
-  'update temporary blogging solution to better blog about making the blog...',
-];
-
-const POSTS = [
-  { title: '0.1.0 (2018-11-13T20:58:39+0000)', content: 'bootstrapped project...' },
-  { title: '0.1.1', contentList: CONTENT_LIST_011 },
-].reverse(); // changelog entries are typically ordered in descending order
+// this is far more depraved...and we get to use the new features for no reason!
+// based on: https://blog.logrocket.com/async-rendering-in-react-with-suspense-5d0eaac886c8
+const changelogResource = createResource(async () => {
+  const res = await fetch('https://raw.githubusercontent.com/mochic/changelog/master/CHANGELOG.md');
+  return await res.text();
+});
 
 export default () => (
   <div className="App">
-    <h1>changelog</h1>
-    <hr />
-    {POSTS.map(post => (
-      <Post {...post} />
-    ))}
+    <ErrorBoundary>
+      <Suspense fallback={<div>loading...</div>}>
+        <Changelog changelogResource={changelogResource} />
+      </Suspense>
+    </ErrorBoundary>
   </div>
 );
