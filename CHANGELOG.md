@@ -1,5 +1,15 @@
 # changelog
 
+## 0.1.3 ()
+
+- basic testing with [jest](https://jestjs.io/) and [enzyme](https://airbnb.io/enzyme/) via [this](https://medium.com/codeclan/testing-react-with-jest-and-enzyme-20505fec4675)
+  - didnt work with babel@7.1.0 + babel-jest@23.6.0 + jest@23.6.0
+  - followed [this](https://jestjs.io/docs/en/getting-started#using-babel) to fix it
+  - added jest support for dynamic importing following [this](https://github.com/airbnb/enzyme/issues/1460#issuecomment-388358778)
+  - added jest support for css module mocking following
+    [this](https://github.com/facebook/jest/issues/3094#issuecomment-385164816)
+  - added test watching by adding `npm test -- --watch` to `scripts` in `package.json`
+
 ## 0.1.2 (2018-11-15T23:03:09+0000)
 
 - setup deployment for github pages
