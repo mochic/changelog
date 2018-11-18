@@ -4,7 +4,8 @@
   "description": "some sort of blog thing?",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
+    "watch": "npm test -- --watch",
     "start": "webpack-dev-server --open --mode development",
     "build": "webpack",
     "predeploy": "npm run build",
@@ -19,33 +20,48 @@
   "bugs": {
     "url": "https://github.com/mochic/changelog/issues"
   },
+  "jest": {
+    "moduleNameMapper": {
+      "\\.(css|less|sass|scss)$": "../../__mocks__/styleMock.js",
+      "\\.(gif|ttf|eot|svg)$": "../../__mocks__/fileMock.js"
+    }
+  },
   "homepage": "https://mochic.github.io/changelog",
   "devDependencies": {
     "@babel/cli": "^7.1.0",
-    "@babel/core": "^7.1.0",
+    "@babel/core": "^7.1.6",
     "@babel/plugin-proposal-class-properties": "^7.1.0",
+    "@babel/plugin-syntax-dynamic-import": "^7.0.0",
     "@babel/plugin-transform-runtime": "^7.1.0",
     "@babel/preset-env": "^7.1.0",
     "@babel/preset-react": "^7.0.0",
     "@babel/runtime": "^7.1.5",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-jest": "^23.6.0",
     "babel-loader": "^8.0.2",
+    "babel-plugin-dynamic-import-node": "^2.2.0",
     "css-loader": "^1.0.0",
+    "enzyme-adapter-react-16": "^1.7.0",
+    "enzyme-to-json": "^3.3.4",
     "eslint": "^5.9.0",
     "html-loader": "^0.5.5",
     "html-webpack-plugin": "^3.2.0",
+    "jest": "^23.6.0",
     "prettier": "^1.15.2",
+    "regenerator-runtime": "^0.13.1",
     "style-loader": "^0.23.0",
     "webpack": "^4.19.1",
     "webpack-cli": "^3.1.1",
     "webpack-dev-server": "^3.1.8"
   },
   "dependencies": {
-    "@babel/plugin-syntax-dynamic-import": "^7.0.0",
     "gh-pages": "^2.0.1",
+    "npm": "^6.4.1",
     "prop-types": "^15.6.2",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
     "react-markdown": "^4.0.3",
+    "react-test-renderer": "^16.6.3",
     "simple-cache-provider": "^0.10.0"
   }
 }
