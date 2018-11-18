@@ -1,6 +1,6 @@
 {
   "name": "changelog",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "some sort of blog thing?",
   "main": "index.js",
   "scripts": {

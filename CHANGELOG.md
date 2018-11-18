@@ -1,5 +1,10 @@
 # changelog
 
+## 0.1.4 (2018-11-18T01:08:03+0000)
+
+- added continuous deployment via travis by following [this](https://medium.com/@bezgachev/6-simple-steps-to-automatically-test-and-deploy-your-javascript-app-to-github-pages-c4c32a34bcb1)
+- upped version to test deployment
+
 ## 0.1.3 (2018-11-18T00:27:05+0000)
 
 - basic testing with [jest](https://jestjs.io/) and [enzyme](https://airbnb.io/enzyme/) via [this](https://medium.com/codeclan/testing-react-with-jest-and-enzyme-20505fec4675)

@@ -14,4 +14,4 @@ deploy:
   local_dir: dist
   on:
     branch: master
-    tagged: true
+    tags: true
