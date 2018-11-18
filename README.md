@@ -1,5 +1,7 @@
 # changelog
 
+[![Build Status](https://travis-ci.org/mochic/changelog.svg?branch=master)](https://travis-ci.org/mochic/changelog)
+
 what?
 
 > it's just a fun exploration into how some sort of blog thing could be built...
